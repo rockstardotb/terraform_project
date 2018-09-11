@@ -8,9 +8,7 @@ $ make run
 
 $ make exec
 
-Note, to use the docker container, you need to create a file named 'awsKeys.sh' in the terraform_project directory. Within the file, export variables for your AWS access key ID and secret key. It should look like the following:
-
-#!/bin/sh
+Note, to when first running the container, you need to export variables for your AWS access key ID and secret key. It should look like the following:
 
 export AWS_ACCESS_KEY_ID=<it>key_id goes here</it>
 
