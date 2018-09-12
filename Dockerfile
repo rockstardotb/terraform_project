@@ -19,6 +19,12 @@ RUN unzip terraform_0.8.8_linux_amd64.zip
 RUN export PATH="$PATH:/terraform"
 RUN cd /bin && ln -s /terraform
 
+RUN wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.9.3/terragrunt_linux_amd64
+
+RUN mv terragrunt* ./terragrunt
+RUN export PATH="$PATH:/terragrunt"
+RUN cd /bin && ln -s /terragrunt
+
 ADD . / /app/
 
 WORKDIR /app
