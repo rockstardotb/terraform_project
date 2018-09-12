@@ -4,6 +4,16 @@ provider "aws" {
 
 data "aws_availability_zones" "all" {}
 
+data "terraform_remote_state" "db" {
+	backend		= "s3"
+
+	config {
+		bucket	= "adialexlid"
+		key	= "stage/data-stores/mysql/terraform.tfstate"
+		region	= "us-east-1"
+	}
+}
+
 resource "aws_security_group" "instance" {
 	name 		= "terraform-example-instance"
 	ingress {
